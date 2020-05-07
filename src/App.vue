@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <topNav :mobileView="mobileView"/>
+    <TopNav :mobileView="mobileView"/>
     <Hero :mobileView="mobileView"/>
     <Slider :mobileView="mobileView"/>
     <Footer/>
@@ -9,7 +9,7 @@
 
 <script>
 
-import topNav from './components/topNav.vue'
+import TopNav from './components/TopNav.vue'
 import Hero from './components/Hero.vue'
 import Slider from './components/Slider.vue'
 import Footer from './components/Footer.vue'
@@ -17,7 +17,7 @@ import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
-    topNav , Hero, Footer, Slider
+    TopNav , Hero, Footer, Slider
   },
   data(){
     return{
