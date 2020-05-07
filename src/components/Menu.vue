@@ -42,10 +42,9 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 30px 1rem 0 1rem;
     background: white;
     height: 100%;
-    margin-top: 30px;
     z-index: 2;
   }
 
