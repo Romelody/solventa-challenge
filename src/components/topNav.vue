@@ -2,7 +2,10 @@
   <div id="topNav">
     <header>
       <img :src="logo" class="logo"/>
-      <nav>
+      <div id="navIcon" v-if="mobileview">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav v-if="!mobileView">
         <ul class="nav-links">
           <li><a href="#">Sucursal</a></li>
           <li><a href="#">¿Que necesito?</a></li>
@@ -20,25 +23,25 @@
     data(){
       return{
         logo:logo,
+        mobileView:true,
+        showNav:false
       }
     }
   }
 </script>
 
 <style>
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+#navIcon{
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
 }
-
-li, a, button{
-    color: black;
-    text-decoration: none;
-}
+  i{
+    font-size: 2rem;
+  }
 
 #topNav{
-  background-color: white;
+  background-color: #fff;
 }
 
 header {
