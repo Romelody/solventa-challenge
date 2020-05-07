@@ -1,23 +1,38 @@
 <template>
   <div id="app">
-    <topNav/>
-    <hero/>
-    <slider/>
-    <footerMenu/>
+    <topNav :mobileView="mobileView"/>
+    <Hero :mobileView="mobileView"/>
+    <Slider :mobileView="mobileView"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 
 import topNav from './components/topNav.vue'
-import hero from './components/hero.vue'
-import slider from './components/slider.vue';
-import footerMenu from './components/footerMenu.vue'
+import Hero from './components/Hero.vue'
+import Slider from './components/Slider.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    topNav , hero, footerMenu, slider
+    topNav , Hero, Footer, Slider
+  },
+  data(){
+    return{
+      mobileView:true,
+      showNav:false,
+    }
+  },
+  methods:{
+    handleView(){
+      this.mobileView = window.innerWidth <= 900;
+    }
+  },
+  created(){
+    this.handleView();
+    window.addEventListener('resize',this.handleView)
   }
 }
 </script>
@@ -46,16 +61,5 @@ li, a, button{
 
 p{
   text-align: left;
-}
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 30px 0;
-    margin: 0 auto;
-    width: 85%;
-    height: 500px;
 }
 </style>
