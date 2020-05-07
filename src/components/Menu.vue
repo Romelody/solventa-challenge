@@ -33,24 +33,31 @@
     font-size: 2rem;
   }
   .navIcon{
-    padding: 15px;
     width: 50px;
   }
   .mobile-nav-links{
+    position: fixed;
+    top:0;
+    right:0;
     list-style: none;
     display: flex;
     flex-direction: column;
-    padding: 8px 4px;
+    padding: 1rem;
+    background: white;
+    height: 100%;
+    margin-top: 30px;
+    z-index: 2;
   }
 
   .mobile-nav-links li {
-    display: inline-block;
-    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-bottom: 1px solid #7f54b3;
   }
 
   .mobile-nav-links li a {
     transition: all 0.3s ease 0s;
-    margin: 8px 4px 8px 4px;
   }
 
   .mobile-nav-links li a:hover{
@@ -76,7 +83,12 @@
 
   .close{
     position:fixed;
-    top:0;
-    right: 0;
+    top: 1rem;
+    right: 2rem;
+    color: #fff;
+    background: #7f54b3;
+    padding: 2px 5px;
+    border-radius: 4px;
+    z-index: 3;
   }
 </style>
